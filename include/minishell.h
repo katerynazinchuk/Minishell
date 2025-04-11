@@ -29,6 +29,7 @@ w: wait, wait3, wait4, waitpid, write
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <unistd.h>
+# include <limits.h>
 # include <pwd.h>
 # include <sys/types.h>
 

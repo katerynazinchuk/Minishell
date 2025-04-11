@@ -14,8 +14,10 @@ int main()
 	{
 		//update_prompt(prompt);
 		line = readline(prompt);
-		if (!line)
+		if (!line || ft_strncmp(line, "exit", 5))
 		{
+			if(line)
+				free(line);
 			write(1, "exit\n", 6);
 			exit (0);
 		}
@@ -26,4 +28,23 @@ int main()
 	}
 	return(0);
 }
-//int argc, char **argv, char **env
+
+void update_prompt(char *prompt)
+{
+	char	user[1024];
+	char	hostname[1024];
+	char	path[PATH_MAX];//на убунту треба ставити змінну PATH_MAX
+
+	if (!getcwd(path, sizeof(path)))
+	{
+		perror("getcwd");
+		return;
+	}	
+
+	if (getenv("USER") && getenv() )
+	{
+
+	}
+	hostname = getenv("HOSTNAME");
+
+}
